@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+# The Web Server
+  rtmp:
+    container_name: rtmp0
+    build:
+      context: ./
+      dockerfile: development/rtmp.dockerfile
+    volumes:
+      - /var/log/nginx
+    ports: 
+        - 8080:8080
+        - 1935:1935
